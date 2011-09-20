@@ -9,6 +9,9 @@ Plagin was built as Rails 3 Engine plugin.
 
 Add to Gemfile of application:
 
+```ruby
+gem "calendar_view"
+```
 
 than
 
