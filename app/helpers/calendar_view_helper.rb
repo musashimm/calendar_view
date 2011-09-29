@@ -66,7 +66,6 @@ module CalendarViewHelper
         if first.wday != first_wday
             (first_wday == 0 ? (first.wday == 0 ? 7 : first.wday) : (first.wday == 0 ? 7 : first.wday) - 1).downto(1) do |i|
                 prev = first - i
-                logger.custom(i,prev.to_s)
                 if prev.wday == first_wday
                     html << "<tr>"
                     html << "<td class=\"weeknum\">#{prev.cweek}</td>"
