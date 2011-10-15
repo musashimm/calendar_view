@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Wojciech Todryk"]
   s.email       = ["wojciech@todryk.pl"]
-  s.homepage    = "https://github.com/musashimm/calendar_view"
+  s.homepage    = "http://todryk.pl/calendar-view"
   s.summary     = %q{Calendar view}
   s.description = %q{Extends Rails application of calendar view}
 

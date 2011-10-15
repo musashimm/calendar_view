@@ -17,6 +17,68 @@ module CalendarViewHelper
         html
     end
 
+    def calendar_window(options={})
+        html = ""
+        now = DateTime.now
+        year = now.year
+        month = now.month
+        back = options[:back] ? options[:back] : 10
+        forward = options[:forward] ? options[:forward] : 20
+        highlight = options[:highlight_date] ? options[:highlight_date] : nil
+        if options[:highlight_day] && options[:highlight_month] && options[:highlight_year]
+            highlight = Date.new(options[:highlight_year],options[:highlight_month],options[:highlight_day])
+        end
+        highlight = options[:highlight_between] if options[:highlight_between]
+        fday = Date.new(now.year,now.month,now.day)
+        nowday = Date.new(now.year,now.month,now.day)
+        fday -= back
+        wdays = []
+        days = []
+        weeks = []
+        months = []
+        colspan = 1
+        mcolspan = 1
+        html = ""
+        html << "<div class=\"calendar window\">"
+        html << "<h3>#{options[:title]}</h3>" if options[:title]
+        html << "<div class=\"content\">"
+        html << "<table>"
+
+        1.upto(back + forward) do
+            if fday == Date.new(fday.year,fday.month,-1)
+				months << "<td class=\"monthnum\" colspan=\""+mcolspan.to_s+"\">"+fday.month.to_s+"</td>"
+				mcolspan=1
+			else
+				mcolspan+=1
+			end
+            if fday.wday == 0
+				weeks << "<td class=\"weeknum\" colspan=\""+colspan.to_s+"\">"+fday.cweek.to_s+"</td>"
+				colspan=1
+			else
+				colspan+=1
+			end
+            wdays << "<td class=\"wday\">#{t(:abbr_day_names,:scope=>:date)[fday.wday == 7 ? 0 : fday.wday]}</td>"
+            days << color_follow_day(nowday,fday,highlight)
+            fday = fday + 1
+        end
+        months << "<td class=\"monthnum\" colspan=\""+mcolspan.to_s+"\">"+fday.month.to_s+"</td>"
+        weeks << "<td class=\"weeknum\" colspan=\""+colspan.to_s+"\">"+fday.cweek.to_s+"</td>"
+        html << "<tr>"
+        html << months.join
+        html << "</tr>"
+        html << "<tr>"
+        html << weeks.join
+        html << "</tr>"
+        html << "<tr>"
+        html << wdays.join
+        html << "</tr>"
+        html << "<tr>"
+        html << days.join
+        html << "</tr>"
+        html << "</table></div></div>"
+        html.html_safe
+    end
+
     def calendar_square(options={})
 
         now = DateTime.now
