@@ -1,5 +1,5 @@
 ## Introduction
-_Calendar view_ is a rails plugin which extends application of calendar views.
+_Calendar view_ is a rails plugin which extends application of calendar views. Got to [this page](http://todryk.pl/calendar-view) to see samples.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ Plugin was built as Rails 3 Engine plugin.
 Add to Gemfile of application:
 
 ```ruby
-gem "calendar_view", "~> 0.0.3"
+gem "calendar_view", "~> 0.0.5"
 ```
 
 than
@@ -24,6 +24,7 @@ to install gem.
 In views of Your application add:
 
 ```ruby
+<%= calendar_window(:back=>10,:forward=>20) %>
 <% 1.upto(6) do |i| %>
 <%=  calendar_square(:month=>i,:highlight_between => Date.new(2011,9,19)..Date.new(2011,9,25)) %>
 <% end %>
