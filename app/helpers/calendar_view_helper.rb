@@ -114,14 +114,14 @@ module CalendarViewHelper
 
         html = ""
         html << "<div class=\"calendar square\">"
-        html << "<h3>"
+        html << "<h3 class=\"monthname\">"
         html << t(:month_names,:scope=>:date)[month]
         html << " #{year}" if year != now.year
         html << "</h3>"
         html << "<div class=\"content\">"
         html << "<table>"
 
-        html << "<tr><td class=\"outside\">&nbsp;</td>"
+        html << "<tr><td class=\"corner\">&nbsp;</td>"
         html << wdays_names(first_wday)
         html << "</tr>"
 
