@@ -7,6 +7,8 @@ Plugin was built as Rails 3 Engine plugin.
 
 ## Usage
 
+### Gemfile
+
 Add to Gemfile of application:
 
 ```ruby
@@ -20,6 +22,8 @@ bundle install
 ```
 
 to install gem.
+
+### Stylesheets
 
 There are two themes current available:
 - olive
@@ -36,6 +40,9 @@ or
 ```scss
 @import "calendar_view_olive_theme"
 ```
+You can also customize _public/stylesheets_ using above themes.
+
+### Views
 
 In views of Your application add:
 
@@ -62,7 +69,3 @@ In views of Your application add:
                    :highlight_between => Date.new(2011,12,1)..Date.new(2011,12,10) # highlight range of days
                    ) %>
 ```
-
-Customize _public/stylesheets_ and copy to Your public directory.
-
-
