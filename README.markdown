@@ -10,7 +10,7 @@ Plugin was built as Rails 3 Engine plugin.
 Add to Gemfile of application:
 
 ```ruby
-gem "calendar_view", "~> 0.0.7"
+gem "calendar_view"
 ```
 
 than
