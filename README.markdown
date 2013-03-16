@@ -1,5 +1,5 @@
 ## Introduction
-_Calendar view_ is a rails plugin which extends application of calendar views. Got to [this page](http://todryk.pl/calendar-view) to see samples.
+_Calendar view_ is a rails plugin which extends application of calendar views. Got to [this page](http://todryk.pl/hard-soft/calendar-view) to see samples.
 
 ## Requirements
 
@@ -20,6 +20,20 @@ bundle install
 ```
 
 to install gem.
+
+There are two themes current available:
+- olive
+- bootstrap
+
+In Rails 3 app add import directive to Your SCSS/SASS file:
+
+```scss
+@import "calendar_view_bootstrap_theme"
+
+or 
+
+```scss
+@import "calendar_view_olive_theme"
 
 In views of Your application add:
 
