@@ -29,11 +29,13 @@ In Rails 3 app add import directive to Your SCSS/SASS file:
 
 ```scss
 @import "calendar_view_bootstrap_theme"
+```
 
 or 
 
 ```scss
 @import "calendar_view_olive_theme"
+```
 
 In views of Your application add:
 
